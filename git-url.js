@@ -35,8 +35,8 @@ var ref;
 
 // base href
 var base = {
-  'github': 'https://github.com/',
-  'stash': 'https://stash.englishtown.com/'
+  'github': 'https://github.com',
+  'stash': 'https://stash.englishtown.com'
 };
 
 // which type of git repository?
@@ -92,7 +92,7 @@ if (!url) {
   exit(1);
 }
 
-url = base[type] + url;
+url = base[type] + path.normalize(url);
 // where to put the created url
 if (cli.clipboard) {
   // TODO: cross-platform clipboard
